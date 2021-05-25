@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    font-family: 'Poppins', sans-serif;
+    color: #ddd;
+}
+
+body,
+html {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #23272a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Searchbar */
+
+input {
+    border: none;
+    color: #23272a;
+    padding: .5rem;
+    border-radius: 20px;
+}
+
+input:focus {
+    outline: 0;
+}
+
+
+/* Card */
+
+main {
+    height: auto;
+    width: 650px;
+    margin: 30px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    background: #2c2f33;
+}
+
+img {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+}
+
+.user-information {
+    width: 100%;
+}
+
+p {
+    margin: 0;
+}
+
+p[username] {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+p[tag] {
+    font-size: .8rem;
+    color: rgb(194, 194, 194);
+}
