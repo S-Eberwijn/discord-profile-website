@@ -10,11 +10,12 @@
 </head>
 
 <body>
-    <form>
-        <input type="text" id="search" placeholder="Search user">
+    <form id="form" action="http://localhost:3000/" method="POST">
+        <input type="text" id="search" placeholder="Search user by ID" name="discordID">
     </form>
-    <main>
-        <img src="https://cdn.discordapp.com/avatars/241273372892200963/995f2979745bc07073371853ba935238.png?size=128" alt="User Image">
+    <main id="main">
+        <img src="https://cdn.discordapp.com/avatars/241273372892200963/995f2979745bc07073371853ba935238.png?size=128"
+            alt="User Image">
         <div class="user-information">
             <p username>Stephan "Khthonios" Eberwijn</p>
             <p tag>Stephan#4384</p>

@@ -1,14 +1,37 @@
 const express = require('express')
 const app = express();
 const port = 3000;
+var { urlencoded } = require('body-parser');
+// Create application/x-www-form-urlencoded parser  
+var urlencodedParser = urlencoded({ extended: false })
+app.use(express.static('public'));
+
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
+
+
+const userManager = new Discord.UserManager(client);
+
 
 app.use(express.static('public'));
 
 
 app.get('/', (req, res) => {
+    res.send('/index.html')
+}).post('/', urlencodedParser, function (req, res) {
+    let discordID = req.body.discordID;
+    console.log(discordID);
+
+    userManager.fetch(discordID).then(user => {
+        console.log(user)
+    })
+
+
+    res.redirect(301, '/');
+})
+
+app.get('/redirect', (req, res) => {
     res.send('/index.html')
 })
 
@@ -17,15 +40,14 @@ app.listen(port, () => {
 })
 
 client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
+    console.log(`Logged in as ${client.user.username}!`);
+
+    // let userID = '278240897773076480';
+
+
 });
 
-client.on('message', msg => {
-    if (msg.content === 'ping') {
-        msg.reply('Pong!');
-    }
-});
 
 
+client.login('');
 
-client.login('ODQ2NzQ2NDU2MDMxMjMyMDEw.YK0AFg.h6RRMr72zCjweywMS_rBqdIyQBs');

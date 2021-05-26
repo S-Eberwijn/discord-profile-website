@@ -42,6 +42,7 @@ main {
     flex-direction: row;
     gap: 10px;
     background: #2c2f33;
+    border-radius: 5px;
 }
 
 img {
