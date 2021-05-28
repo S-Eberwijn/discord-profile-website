@@ -3,6 +3,8 @@ const search = document.getElementById('search');
 
 
 async function getUser(userID) {
-    let userID = '278240897773076480';
+    userID = '278240897773076480';
     console.log(userID);
 }
+
+console.log('script loaded')

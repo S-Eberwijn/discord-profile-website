@@ -17,6 +17,18 @@ html {
 }
 
 
+/* Header */
+
+header {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    left: 0;
+    top: 0;
+    background-color: #1c1e20;
+}
+
+
 /* Searchbar */
 
 input {
@@ -45,6 +57,7 @@ main {
     border-radius: 5px;
 }
 
+object,
 img {
     width: 128px;
     height: 128px;
@@ -52,7 +65,7 @@ img {
 }
 
 .user-information {
-    width: 100%;
+    margin-left: 10px;
 }
 
 p {
@@ -60,11 +73,27 @@ p {
 }
 
 p[username] {
+    width: auto;
     font-size: 1.4rem;
     font-weight: bold;
+    position: relative;
 }
 
 p[tag] {
     font-size: .8rem;
     color: rgb(194, 194, 194);
+}
+
+span.bot {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: .3rem;
+    color: white;
+    background-color: #3c86b8;
+    text-transform: uppercase;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    transform: translateY(-50%);
 }
