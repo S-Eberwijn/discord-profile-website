@@ -1,2 +1,35 @@
 header
-    h1 #{title}
+    div.logoAndTitle
+        img(src="/logo.png", alt="DPC Logo")
+        h1 Discord Profile Checker
+    nav(role="navigation")
+        div#menuToggle
+            input(title="" placeholder=""  type="checkbox")
+            span     
+            span 
+            span
+            ul#menu 
+                a(href="/")
+                    if isStartPage
+                        li(class="active") Start
+                    else
+                        li Start
+                a(href="/users")
+                    if isUserPage
+                        li(class="active") Users
+                    else
+                        li Users
+                a(href="/guilds")
+                    if isGuildPage
+                        li(class="active") Guilds
+                    else
+                        li Guilds
+                a(href="javascript:;")
+                    if isContactPage
+                        li(class="active") Contact
+                    else
+                        li Contact
+                div#modeToggle
+                    label Dark
+                    div#toggleSwitch(onClick="toggleTheme()")    
+                    label Light

@@ -1,0 +1,17 @@
+form#form(action="/users", method="POST")
+    input#search(type="text", placeholder="Search user by ID", name="discordID")
+            
+section#users 
+    if error 
+        h1.error #{error}
+    else 
+        object(title="User Avatar" data=avatar, type="image/png") 
+            img(src="https://cdn.discordapp.com/embed/avatars/0.png", alt="Default User Avatar")
+        div.user-information 
+            p(username) #{user.username}
+                if user.bot 
+                    span.bot bot
+            p(tag) #{user.username}##{user.discriminator}
+            div.badgesWrapper
+                each badge in badges 
+                    img(src=badge, alt="badge")

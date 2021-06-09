@@ -1,39 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-* {
-    font-family: 'Poppins', sans-serif;
-    color: #ddd;
+
+.theme-dark {
+    --text-color: #ddd;
+    --navbar-text-color: #fff;
+    --primary-bg-color: #23272a;
+    --secondary-bg-color: #2c2f33;
+    --tertiary-bg-color: #1c1e20;
+    --placeholder-text-color: #8e8e8e;
 }
 
-body,
-html {
+.theme-light {
+    --text-color: #272727;
+    --navbar-text-color: #000;
+    --primary-bg-color: #e0e0e0;
+    --secondary-bg-color: #ececec;
+    --tertiary-bg-color: #d8d8d8;
+    --placeholder-text-color: #202020;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+}
+
+body, html {
     margin: 0;
     height: 100%;
     width: 100%;
-    background-color: #23272a;
+    background-color: var(--primary-bg-color);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
-
-
-/* Header */
-
-header {
-    position: absolute;
-    width: 100%;
-    height: 100px;
-    left: 0;
-    top: 0;
-    background-color: #1c1e20;
-}
-
 
 /* Searchbar */
 
 input {
-    border: none;
-    color: #23272a;
+    border: 2px solid var(--tertiary-bg-color);
+    color: var(--text-color);
+    background-color: var(--secondary-bg-color);
     padding: .5rem;
     border-radius: 20px;
 }
@@ -42,26 +49,46 @@ input:focus {
     outline: 0;
 }
 
+input::placeholder {
+    color: var(--placeholder-text-color);
+    padding: 0.2rem;
+}
 
-/* Card */
+/* USERS */
 
-main {
-    height: auto;
+section {
+    height: 140px;
     width: 650px;
     margin: 30px;
     padding: 1rem;
     display: flex;
     flex-direction: row;
     gap: 10px;
-    background: #2c2f33;
-    border-radius: 5px;
+    background: var(--secondary-bg-color);
+    border-radius: 10px;
+    position: relative;
+    align-items: center;
+    border: 2px solid var(--tertiary-bg-color);
 }
 
-object,
-img {
+/* main::after {
+    content: '2019';
+    position: absolute;
+    top: 50%;
+    right: -10%;
+    width: 140px;
+    transform: rotate(90deg);
+    transform-origin: top;
+    text-align: center;
+    opacity: .6;
+    font-size: 10vh;
+} */
+
+object, img {
     width: 128px;
     height: 128px;
     border-radius: 50%;
+    overflow: hidden;
 }
 
 .user-information {
@@ -70,21 +97,21 @@ img {
 
 p {
     margin: 0;
+    font-size: .8rem;
 }
 
-p[username] {
+.user-information p[username] {
     width: auto;
     font-size: 1.4rem;
     font-weight: bold;
     position: relative;
 }
 
-p[tag] {
-    font-size: .8rem;
-    color: rgb(194, 194, 194);
+.user-information p[tag] {
+    color: var(--text-color);
 }
 
-span.bot {
+.user-information span.bot {
     font-size: 0.7rem;
     font-weight: 600;
     padding: .3rem;
@@ -96,4 +123,23 @@ span.bot {
     top: 50%;
     right: -40px;
     transform: translateY(-50%);
+}
+
+.user-information div.badgesWrapper {
+    margin-top: 5px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-information div.badgesWrapper img {
+    height: 80%;
+    width: auto;
+}
+
+h1.error{
+    margin: 0;
+    width: 100%;
+    text-align: center;
 }

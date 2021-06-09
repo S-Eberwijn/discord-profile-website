@@ -1,0 +1,19 @@
+.box {
+    height: 70%;
+    text-align: center;
+}
+
+h1.error {
+    margin: 0;
+}
+
+p {
+    font-size: 10rem;
+    opacity: 0.15;
+}
+
+.smiley {}
+
+.errorTitle {
+    margin-top: -75px;
+}
